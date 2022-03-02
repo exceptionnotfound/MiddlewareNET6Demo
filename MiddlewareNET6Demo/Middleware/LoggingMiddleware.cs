@@ -27,7 +27,7 @@ namespace MiddlewareNET6Demo.Middleware
                                   .Distinct();
 
             //Log these headers
-            _logger.Log(LogLevel.Information, string.Join(", ", uniqueResponseHeaders);
+            _logger.Log(LogLevel.Information, string.Join(", ", uniqueResponseHeaders));
         }
     }
 }
