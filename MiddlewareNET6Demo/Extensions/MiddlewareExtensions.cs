@@ -43,5 +43,15 @@ namespace MiddlewareNET6Demo.Extensions
         {
             return builder.UseMiddleware<CultureMiddleware>();
         }
+
+        /// <summary>
+        /// Adds the time logging middleware, which logs how long it takes for the system to return a response.
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <returns></returns>
+        public static IApplicationBuilder UseTimeLoggingMiddleware(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<TimeLoggingMiddleware>();
+        }
     }
 }

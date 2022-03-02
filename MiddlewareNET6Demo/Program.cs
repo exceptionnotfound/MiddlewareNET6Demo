@@ -29,9 +29,13 @@ app.UseStaticFiles();
 
 //Add our custom middleware.
 //Comment out any you don't want to use.
-app.UseLayoutMiddleware();
+//The basic way to add a middleware class to our pipeline is to call UseMiddleware<T>
+app.UseMiddleware<LayoutMiddleware>();
+
+//We can also use custom extensions to add middleware to the pipeline.
 app.UseLoggingMiddleware();
 app.UseCultureMiddleware();
+app.UseTimeLoggingMiddleware();
 
 //This one is commented out because it will return a response, and the request will never get to the main app.
 //app.UseSimpleResponseMiddleware();
