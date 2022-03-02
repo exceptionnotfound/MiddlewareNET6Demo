@@ -1,10 +1,12 @@
 using MiddlewareNET6Demo.Middleware;
 using MiddlewareNET6Demo.Extensions;
+using MiddlewareNET6Demo.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddTransient<ILoggingService, LoggingService>();
 
 var app = builder.Build();
 
@@ -28,7 +30,10 @@ app.UseStaticFiles();
 //Add our custom middleware.
 //Comment out any you don't want to use.
 app.UseLayoutMiddleware();
-app.UseSimpleResponseMiddleware();
+app.UseLoggingMiddleware();
+
+//This one is commented out because it will return a response, and the request will never get to the main app.
+//app.UseSimpleResponseMiddleware();
 
 app.UseRouting();
 
