@@ -33,5 +33,15 @@ namespace MiddlewareNET6Demo.Extensions
         {
             return builder.UseMiddleware<LoggingMiddleware>();
         }
+
+        /// <summary>
+        /// Adds the Culture middleware, which sets the current culture based on the query string.
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <returns></returns>
+        public static IApplicationBuilder UseCultureMiddleware(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<CultureMiddleware>();
+        }
     }
 }

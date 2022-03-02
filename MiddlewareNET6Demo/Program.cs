@@ -31,6 +31,7 @@ app.UseStaticFiles();
 //Comment out any you don't want to use.
 app.UseLayoutMiddleware();
 app.UseLoggingMiddleware();
+app.UseCultureMiddleware();
 
 //This one is commented out because it will return a response, and the request will never get to the main app.
 //app.UseSimpleResponseMiddleware();
