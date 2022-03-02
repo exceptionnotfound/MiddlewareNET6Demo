@@ -18,9 +18,10 @@ namespace MiddlewareNET6Demo.Middleware
             //Log the incoming request path
             _logger.Log(LogLevel.Information, context.Request.Path);
 
+            //Invoke the next middleware in the pipeline
             await _next(context);
 
-            //Log the response headers
+            //Get distinct response headers
             var uniqueResponseHeaders 
                 = context.Response.Headers
                                   .Select(x => x.Key)
