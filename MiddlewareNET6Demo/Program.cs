@@ -34,10 +34,12 @@ app.UseMiddleware<LayoutMiddleware>();
 
 //We can also use custom extensions to add middleware to the pipeline.
 app.UseLoggingMiddleware();
-app.UseCultureMiddleware();
 app.UseTimeLoggingMiddleware();
+app.UseIntentionalDelayMiddleware();
+app.UseCultureMiddleware();
 
 //This one is commented out because it will return a response, and the request will never get to the main app.
+//Uncomment this if you'd like to see how it behaves.
 //app.UseSimpleResponseMiddleware();
 
 app.UseRouting();

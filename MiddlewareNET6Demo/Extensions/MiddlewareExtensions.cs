@@ -53,5 +53,15 @@ namespace MiddlewareNET6Demo.Extensions
         {
             return builder.UseMiddleware<TimeLoggingMiddleware>();
         }
+
+        /// <summary>
+        /// Adds the intentional delay middleware, which makes the pipeline pause for 100ms both on request and again on response.
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <returns></returns>
+        public static IApplicationBuilder UseIntentionalDelayMiddleware(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<IntentionalDelayMiddleware>();
+        }
     }
 }
