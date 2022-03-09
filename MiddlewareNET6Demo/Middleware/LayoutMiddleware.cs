@@ -18,7 +18,7 @@
         {
             //Code that modifies the response
 
-            await _next(context); //This line is required, otherwise the rest of the pipeline will not be called.
+            await _next(context); //This line is required, otherwise the next middleware in the pipeline will not be called.
 
             //Logging or other code that DOES NOT modify the response
         }
